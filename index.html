@@ -51,21 +51,27 @@
     />
     <meta name="twitter:image" content="https://sylveoncompany.pl/og.png" />
 
-    <!-- Google Consent Mode v2 defaults (denied). Cookie UI via Google Privacy & Messaging. -->
+    <!-- Google Consent Mode: default granted; reject via banner → denied -->
     <script>
       window.dataLayer = window.dataLayer || [];
       function gtag() {
         dataLayer.push(arguments);
       }
-      gtag("consent", "default", {
-        analytics_storage: "denied",
-        ad_storage: "denied",
-        ad_user_data: "denied",
-        ad_personalization: "denied",
-        wait_for_update: 500,
-      });
+      (function () {
+        var saved = null;
+        try {
+          saved = localStorage.getItem("cookie_consent");
+        } catch (e) {}
+        var analytics = saved === "denied" ? "denied" : "granted";
+        gtag("consent", "default", {
+          analytics_storage: analytics,
+          ad_storage: "denied",
+          ad_user_data: "denied",
+          ad_personalization: "denied",
+        });
+      })();
       gtag("js", new Date());
-      gtag("config", "G-825RZRV02V", { anonymize_ip: true });
+      gtag("config", "G-825RZRV02V");
     </script>
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-825RZRV02V"></script>
     <link rel="dns-prefetch" href="https://www.googletagmanager.com" />
@@ -399,8 +405,61 @@
       Skontaktuj się <span aria-hidden="true">→</span>
     </a>
 
+    <div class="cookie-banner" id="cookieBanner" hidden role="dialog" aria-label="Zgoda na pliki cookies">
+      <div class="cookie-banner__inner">
+        <p>
+          Używamy plików cookies m.in. do analityki (Google Analytics), żeby lepiej rozumieć ruch na
+          stronie.
+          <a href="/polityka-prywatnosci">Polityka prywatności</a>
+        </p>
+        <div class="cookie-banner__actions">
+          <button type="button" class="btn btn--ghost" id="cookieReject">Odrzuć</button>
+          <button type="button" class="btn btn--primary" id="cookieAccept">Akceptuj</button>
+        </div>
+      </div>
+    </div>
+
     <script>
       document.getElementById("year").textContent = new Date().getFullYear();
+
+      (function () {
+        var KEY = "cookie_consent";
+        var banner = document.getElementById("cookieBanner");
+        var acceptBtn = document.getElementById("cookieAccept");
+        var rejectBtn = document.getElementById("cookieReject");
+
+        function setConsent(value) {
+          try {
+            localStorage.setItem(KEY, value);
+          } catch (e) {}
+          var state = value === "granted" ? "granted" : "denied";
+          gtag("consent", "update", {
+            analytics_storage: state,
+            ad_storage: "denied",
+            ad_user_data: "denied",
+            ad_personalization: "denied",
+          });
+          banner.hidden = true;
+          document.body.classList.remove("cookie-open");
+        }
+
+        var saved = null;
+        try {
+          saved = localStorage.getItem(KEY);
+        } catch (e) {}
+
+        if (!saved) {
+          banner.hidden = false;
+          document.body.classList.add("cookie-open");
+        }
+
+        acceptBtn.addEventListener("click", function () {
+          setConsent("granted");
+        });
+        rejectBtn.addEventListener("click", function () {
+          setConsent("denied");
+        });
+      })();
 
       const prefersReduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
       const revealEls = document.querySelectorAll(".reveal");
