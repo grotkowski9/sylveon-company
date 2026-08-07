@@ -800,14 +800,16 @@ a:focus-visible {
 
 .cookie-banner {
   position: fixed;
-  left: 0;
-  right: 0;
-  bottom: 0;
+  left: max(12px, env(safe-area-inset-left));
+  right: auto;
+  bottom: max(12px, env(safe-area-inset-bottom));
   z-index: 60;
+  width: min(100% - 24px, var(--container));
+  max-width: var(--container);
   padding: 10px 14px;
-  padding-bottom: calc(10px + env(safe-area-inset-bottom));
   background: rgba(7, 9, 15, 0.94);
-  border-top: 1px solid var(--border-strong);
+  border: 1px solid var(--border-strong);
+  border-radius: 12px;
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
 }
@@ -815,8 +817,6 @@ a:focus-visible {
   display: none !important;
 }
 .cookie-banner__inner {
-  max-width: var(--container);
-  margin-inline: auto;
   display: flex;
   flex-direction: column;
   gap: 10px;
