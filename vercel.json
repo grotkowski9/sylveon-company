@@ -57,5 +57,15 @@
       "destination": "/polityka-prywatnosci",
       "permanent": true
     }
+  ],
+  "rewrites": [
+    {
+      "source": "/gtag/js",
+      "destination": "https://www.googletagmanager.com/gtag/js"
+    },
+    {
+      "source": "/g/collect",
+      "destination": "https://region1.google-analytics.com/g/collect"
+    }
   ]
 }
