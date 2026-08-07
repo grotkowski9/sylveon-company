@@ -800,31 +800,32 @@ a:focus-visible {
 
 .cookie-banner {
   position: fixed;
-  left: 12px;
-  right: 12px;
-  bottom: calc(12px + env(safe-area-inset-bottom));
+  left: 0;
+  right: 0;
+  bottom: 0;
   z-index: 60;
-  max-width: 420px;
-  margin-inline: auto;
-  padding: 10px 12px;
-  background: rgba(13, 18, 32, 0.96);
-  border: 1px solid var(--border-strong);
-  border-radius: 12px;
-  box-shadow: 0 12px 40px -16px rgba(0, 0, 0, 0.65);
+  padding: 10px 14px;
+  padding-bottom: calc(10px + env(safe-area-inset-bottom));
+  background: rgba(7, 9, 15, 0.94);
+  border-top: 1px solid var(--border-strong);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
 }
 .cookie-banner[hidden] {
   display: none !important;
 }
 .cookie-banner__inner {
+  max-width: var(--container);
+  margin-inline: auto;
   display: flex;
-  align-items: center;
-  justify-content: space-between;
+  flex-direction: column;
   gap: 10px;
+  align-items: stretch;
 }
 .cookie-banner__inner p {
   margin: 0;
-  font-size: 12px;
-  line-height: 1.35;
+  font-size: 12.5px;
+  line-height: 1.45;
   color: var(--text-dim);
 }
 .cookie-banner__inner a {
@@ -834,24 +835,27 @@ a:focus-visible {
 }
 .cookie-banner__actions {
   display: flex;
-  align-items: center;
-  gap: 6px;
+  gap: 8px;
   flex-shrink: 0;
+  align-items: center;
 }
 .cookie-banner__reject {
   appearance: none;
-  border: 0;
+  border: 1px solid var(--border-strong);
   background: transparent;
   color: var(--text-dim);
   font: inherit;
-  font-size: 11px;
+  font-size: 12px;
   font-weight: 500;
-  padding: 6px 8px;
+  padding: 6px 10px;
+  min-height: 32px;
   cursor: pointer;
   border-radius: 8px;
+  flex: 1;
 }
 .cookie-banner__reject:hover {
   color: var(--text);
+  background: var(--surface);
 }
 .cookie-banner__accept {
   appearance: none;
@@ -859,16 +863,37 @@ a:focus-visible {
   background: linear-gradient(135deg, var(--accent), var(--accent-2));
   color: #fff;
   font: inherit;
-  font-size: 11px;
+  font-size: 12px;
   font-weight: 600;
-  padding: 6px 12px;
+  padding: 6px 14px;
+  min-height: 32px;
   cursor: pointer;
   border-radius: 8px;
-  min-height: 28px;
+  flex: 1;
 }
 .cookie-banner__accept:hover {
   filter: brightness(1.06);
 }
 body.cookie-open .sticky-cta {
   display: none !important;
+}
+
+@media (min-width: 720px) {
+  .cookie-banner__inner {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+  }
+  .cookie-banner__inner p {
+    max-width: 680px;
+  }
+  .cookie-banner__actions {
+    flex: 0 0 auto;
+  }
+  .cookie-banner__reject,
+  .cookie-banner__accept {
+    flex: 0 0 auto;
+    min-width: 88px;
+  }
 }
