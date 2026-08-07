@@ -804,14 +804,15 @@ a:focus-visible {
   right: auto;
   bottom: max(12px, env(safe-area-inset-bottom));
   z-index: 60;
-  width: min(100% - 24px, var(--container));
-  max-width: var(--container);
-  padding: 10px 14px;
+  width: min(calc(100% - 24px), 360px);
+  max-width: 360px;
+  padding: 10px 12px;
   background: rgba(7, 9, 15, 0.94);
   border: 1px solid var(--border-strong);
   border-radius: 12px;
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
+  box-shadow: 0 12px 36px -18px rgba(0, 0, 0, 0.55);
 }
 .cookie-banner[hidden] {
   display: none !important;
@@ -819,13 +820,13 @@ a:focus-visible {
 .cookie-banner__inner {
   display: flex;
   flex-direction: column;
-  gap: 10px;
+  gap: 8px;
   align-items: stretch;
 }
 .cookie-banner__inner p {
   margin: 0;
-  font-size: 12.5px;
-  line-height: 1.45;
+  font-size: 12px;
+  line-height: 1.4;
   color: var(--text-dim);
 }
 .cookie-banner__inner a {
@@ -835,7 +836,7 @@ a:focus-visible {
 }
 .cookie-banner__actions {
   display: flex;
-  gap: 8px;
+  gap: 6px;
   flex-shrink: 0;
   align-items: center;
 }
@@ -845,10 +846,10 @@ a:focus-visible {
   background: transparent;
   color: var(--text-dim);
   font: inherit;
-  font-size: 12px;
+  font-size: 11px;
   font-weight: 500;
-  padding: 6px 10px;
-  min-height: 32px;
+  padding: 5px 8px;
+  min-height: 28px;
   cursor: pointer;
   border-radius: 8px;
   flex: 1;
@@ -863,10 +864,10 @@ a:focus-visible {
   background: linear-gradient(135deg, var(--accent), var(--accent-2));
   color: #fff;
   font: inherit;
-  font-size: 12px;
+  font-size: 11px;
   font-weight: 600;
-  padding: 6px 14px;
-  min-height: 32px;
+  padding: 5px 10px;
+  min-height: 28px;
   cursor: pointer;
   border-radius: 8px;
   flex: 1;
@@ -876,24 +877,4 @@ a:focus-visible {
 }
 body.cookie-open .sticky-cta {
   display: none !important;
-}
-
-@media (min-width: 720px) {
-  .cookie-banner__inner {
-    flex-direction: row;
-    align-items: center;
-    justify-content: space-between;
-    gap: 16px;
-  }
-  .cookie-banner__inner p {
-    max-width: 680px;
-  }
-  .cookie-banner__actions {
-    flex: 0 0 auto;
-  }
-  .cookie-banner__reject,
-  .cookie-banner__accept {
-    flex: 0 0 auto;
-    min-width: 88px;
-  }
 }
