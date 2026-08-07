@@ -51,11 +51,7 @@
     />
     <meta name="twitter:image" content="https://sylveoncompany.pl/og.png" />
 
-    <!-- Google Consent Mode: default granted; reject via banner → denied -->
-    <script
-      async
-      src="https://www.googletagmanager.com/gtag/js?id=G-825RZRV02V"
-    ></script>
+    <!-- Consent default MUST run before gtag.js (cached async can race otherwise) -->
     <script>
       window.dataLayer = window.dataLayer || [];
       function gtag() {
@@ -72,13 +68,19 @@
           ad_storage: "denied",
           ad_user_data: "denied",
           ad_personalization: "denied",
+          wait_for_update: 500,
         });
       })();
       gtag("js", new Date());
       gtag("config", "G-825RZRV02V", {
         send_page_view: true,
+        debug_mode: true,
       });
     </script>
+    <script
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=G-825RZRV02V"
+    ></script>
 
     <link rel="preload" href="/fonts/inter-400.woff2" as="font" type="font/woff2" crossorigin />
     <link rel="preload" href="/fonts/space-grotesk-700.woff2" as="font" type="font/woff2" crossorigin />
