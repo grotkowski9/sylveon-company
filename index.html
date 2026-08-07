@@ -426,9 +426,48 @@
 
       (function () {
         var KEY = "cookie_consent";
+        var GAP = 12;
         var banner = document.getElementById("cookieBanner");
         var acceptBtn = document.getElementById("cookieAccept");
         var rejectBtn = document.getElementById("cookieReject");
+        var footer = document.querySelector("footer.footer");
+        var watching = false;
+        var ticking = false;
+
+        function syncBannerBottom() {
+          ticking = false;
+          if (!banner || banner.hidden || !footer) return;
+          var overlap = Math.max(0, window.innerHeight - footer.getBoundingClientRect().top);
+          if (overlap > 0) {
+            banner.style.bottom =
+              "max(" + (overlap + GAP) + "px, env(safe-area-inset-bottom))";
+          } else {
+            banner.style.bottom = "";
+          }
+        }
+
+        function onScrollOrResize() {
+          if (!ticking) {
+            ticking = true;
+            requestAnimationFrame(syncBannerBottom);
+          }
+        }
+
+        function startWatch() {
+          if (watching) return;
+          watching = true;
+          window.addEventListener("scroll", onScrollOrResize, { passive: true });
+          window.addEventListener("resize", onScrollOrResize);
+          syncBannerBottom();
+        }
+
+        function stopWatch() {
+          if (!watching) return;
+          watching = false;
+          window.removeEventListener("scroll", onScrollOrResize);
+          window.removeEventListener("resize", onScrollOrResize);
+          banner.style.bottom = "";
+        }
 
         function setConsent(value) {
           try {
@@ -441,6 +480,7 @@
             ad_user_data: "denied",
             ad_personalization: "denied",
           });
+          stopWatch();
           banner.hidden = true;
           document.body.classList.remove("cookie-open");
         }
@@ -453,6 +493,20 @@
         if (!saved) {
           banner.hidden = false;
           document.body.classList.add("cookie-open");
+
+          if (footer && "IntersectionObserver" in window) {
+            var io = new IntersectionObserver(
+              function (entries) {
+                if (banner.hidden) return;
+                if (entries[0].isIntersecting) startWatch();
+                else stopWatch();
+              },
+              { threshold: 0 }
+            );
+            io.observe(footer);
+          } else if (footer) {
+            startWatch();
+          }
         }
 
         acceptBtn.addEventListener("click", function () {
