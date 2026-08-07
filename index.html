@@ -5,18 +5,21 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
     <meta name="theme-color" content="#07090f" />
     <title>Sylveon Company | Piotr Grotkowski - iGaming, E-commerce, CRM & Marketing Automation</title>
-    <meta name="description" content="Piotr Grotkowski Sylveon Company. Doradztwo iGaming, CRM, Marketing Automation, analityka danych i E-commerce dla biznesów cyfrowych. Segmentation, Personalization & Retention." />
+    <meta
+      name="description"
+      content="Piotr Grotkowski Sylveon Company. Doradztwo iGaming, CRM, Marketing Automation, analityka danych i E-commerce dla biznesów cyfrowych. Segmentation, Personalization & Retention."
+    />
     <meta name="author" content="Piotr Grotkowski" />
     <meta name="robots" content="index,follow,max-image-preview:large" />
     <link rel="canonical" href="https://sylveoncompany.pl/" />
-    <!-- favicon -->
-    <link rel="icon" type="image/png" href="/favicon-96x96.png" sizes="96x96" />
+
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="icon" type="image/png" href="/favicon-96x96.png" sizes="96x96" />
     <link rel="shortcut icon" href="/favicon.ico" />
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
     <meta name="apple-mobile-web-app-title" content="Sylveon Company" />
     <link rel="manifest" href="/site.webmanifest" />
-    <!-- Open Graph -->
+
     <meta property="og:site_name" content="Sylveon Company" />
     <meta property="og:type" content="website" />
     <meta property="og:locale" content="pl_PL" />
@@ -25,12 +28,18 @@
       property="og:title"
       content="Sylveon Company | Piotr Grotkowski - CRM, Marketing Automation, iGaming, E-commerce & Data Analytics"
     />
-    <meta property="og:description" content="Piotr Grotkowski Sylveon Company. Doradztwo iGaming, CRM, Marketing Automation, analityka danych i E-commerce dla biznesów cyfrowych. Segmentation, Personalization & Retention."
+    <meta
+      property="og:description"
+      content="Piotr Grotkowski Sylveon Company. Doradztwo iGaming, CRM, Marketing Automation, analityka danych i E-commerce dla biznesów cyfrowych. Segmentation, Personalization & Retention."
     />
-    <!-- TODO: dodaj /og.png 1200x630, potem odkomentuj -->
-    <!-- <meta property="og:image" content="https://sylveoncompany.pl/og.png" /> -->
+    <meta property="og:image" content="https://sylveoncompany.pl/og.png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta
+      property="og:image:alt"
+      content="Sylveon Company — CRM, Marketing Automation, iGaming, E-commerce"
+    />
 
-    <!-- Twitter -->
     <meta name="twitter:card" content="summary_large_image" />
     <meta
       name="twitter:title"
@@ -40,135 +49,114 @@
       name="twitter:description"
       content="Piotr Grotkowski Sylveon Company. Doradztwo iGaming, CRM, Marketing Automation, analityka danych i E-commerce dla biznesów cyfrowych. Segmentation, Personalization & Retention."
     />
+    <meta name="twitter:image" content="https://sylveoncompany.pl/og.png" />
 
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
+    <!-- Google Consent Mode v2 defaults (denied). Cookie UI via Google Privacy & Messaging. -->
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("consent", "default", {
+        analytics_storage: "denied",
+        ad_storage: "denied",
+        ad_user_data: "denied",
+        ad_personalization: "denied",
+        wait_for_update: 500,
+      });
+      gtag("js", new Date());
+      gtag("config", "G-825RZRV02V", { anonymize_ip: true });
+    </script>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-825RZRV02V"></script>
+    <link rel="dns-prefetch" href="https://www.googletagmanager.com" />
+    <link rel="preconnect" href="https://www.googletagmanager.com" crossorigin />
 
-  const savedConsent = localStorage.getItem('cookie_consent');
-
-  if (savedConsent === 'granted') {
-    gtag('consent', 'default', {
-      'analytics_storage': 'granted',
-      'ad_storage': 'granted',
-      'ad_user_data': 'granted',
-      'ad_personalization': 'granted'
-    });
-  } else {
-    gtag('consent', 'default', {
-      'analytics_storage': 'denied',
-      'ad_storage': 'denied',
-      'ad_user_data': 'denied',
-      'ad_personalization': 'denied',
-      'wait_for_update': 500
-    });
-  }
-</script>
-
-
-    <!-- Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      rel="stylesheet"
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Space+Grotesk:wght@500;600;700&display=swap"
-    />
-
-    <link rel="preload" as="style" href="/styles.css" />
+    <link rel="preload" href="/fonts/inter-400.woff2" as="font" type="font/woff2" crossorigin />
+    <link rel="preload" href="/fonts/space-grotesk-700.woff2" as="font" type="font/woff2" crossorigin />
+    <link rel="stylesheet" href="/fonts.css" />
     <link rel="stylesheet" href="/styles.css" />
 
-    <!-- (SCHEMA GRAPH) -->
     <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@graph": [
-        {
-          "@type": "WebSite",
-          "@id": "https://sylveoncompany.pl/#website",
-          "url": "https://sylveoncompany.pl/",
-          "name": "Sylveon Company",
-          "inLanguage": "pl-PL",
-          "publisher": {
-            "@id": "https://sylveoncompany.pl/#organization"
+      {
+        "@context": "https://schema.org",
+        "@graph": [
+          {
+            "@type": "WebSite",
+            "@id": "https://sylveoncompany.pl/#website",
+            "url": "https://sylveoncompany.pl/",
+            "name": "Sylveon Company",
+            "inLanguage": "pl-PL",
+            "publisher": { "@id": "https://sylveoncompany.pl/#organization" }
+          },
+          {
+            "@type": "Organization",
+            "@id": "https://sylveoncompany.pl/#organization",
+            "name": "Sylveon Company",
+            "alternateName": ["Piotr Grotkowski Sylveon Company", "Piotr Grotkowski Sylveon"],
+            "url": "https://sylveoncompany.pl/",
+            "email": "kontakt@sylveoncompany.pl",
+            "logo": "https://sylveoncompany.pl/logo.svg",
+            "areaServed": "PL",
+            "description": "Piotr Grotkowski Sylveon Company. Doradztwo iGaming, CRM, Marketing Automation, analityka danych i E-commerce dla biznesów cyfrowych.",
+            "founder": { "@id": "https://sylveoncompany.pl/#person" },
+            "knowsAbout": [
+              "iGaming",
+              "CRM",
+              "Marketing Automation",
+              "E-commerce",
+              "Data Analytics",
+              "Churn Prevention",
+              "Real-Time Marketing"
+            ]
+          },
+          {
+            "@type": "Person",
+            "@id": "https://sylveoncompany.pl/#person",
+            "name": "Piotr Grotkowski",
+            "jobTitle": "Founder, CEO & Owner",
+            "worksFor": { "@id": "https://sylveoncompany.pl/#organization" },
+            "url": "https://sylveoncompany.pl/",
+            "sameAs": ["https://www.linkedin.com/in/grotkowskipiotr/"],
+            "knowsAbout": [
+              "iGaming",
+              "CRM",
+              "Marketing Automation",
+              "E-commerce",
+              "Data Analytics",
+              "Churn Prevention",
+              "Retention & Reactivation",
+              "Customer Lifecycle"
+            ],
+            "nationality": "PL"
           }
-        },
-        {
-          "@type": "Organization",
-          "@id": "https://sylveoncompany.pl/#organization",
-          "name": "Sylveon Company",
-          "alternateName": ["Piotr Grotkowski Sylveon Company", "Piotr Grotkowski Sylveon"],
-          "url": "https://sylveoncompany.pl/",
-          "email": "kontakt@sylveoncompany.pl",
-          "areaServed": "PL",
-          "description": "Piotr Grotkowski Sylveon Company. Doradztwo iGaming, CRM, Marketing Automation, analityka danych i E-commerce dla biznesów cyfrowych. Segmentation, Personalization & Retention.",
-          "founder": {
-            "@id": "https://sylveoncompany.pl/#person"
-          },
-          "knowsAbout": [
-            "iGaming",
-            "CRM",
-            "Marketing Automation",
-            "E-commerce",
-            "Data Analytics",
-            "Churn Prevention",
-            "Real-Time Marketing"
-          ]
-        },
-        {
-          "@type": "Person",
-          "@id": "https://sylveoncompany.pl/#person",
-          "name": "Piotr Grotkowski",
-          "jobTitle": "Founder, CEO & Owner",
-          "worksFor": {
-            "@id": "https://sylveoncompany.pl/#organization"
-          },
-          "url": "https://sylveoncompany.pl/",
-          "sameAs": [
-            "https://www.linkedin.com/in/grotkowskipiotr/"
-          ],
-          "knowsAbout": [
-            "iGaming",
-            "CRM",
-            "Marketing Automation",
-            "E-commerce",
-            "Data Analytics",
-            "Churn Prevention",
-            "Retention & Reactivation",
-            "Customer Lifecycle"
-          ],
-          "nationality": "PL"
-        }
-      ]
-    }
+        ]
+      }
     </script>
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-825RZRV02V"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-825RZRV02V');
-</script>
   </head>
   <body>
     <a href="#main" class="skip-link">Przejdź do treści</a>
 
     <header class="topbar">
       <div class="container topbar__inner">
-               <a href="/" class="brand" aria-label="Sylveon Company — strona główna">
+        <a href="/" class="brand">
+          <img class="brand__logo" src="/logo.svg" width="28" height="28" alt="" />
           <span class="brand__a">Sylveon</span><span class="brand__b">Company</span>
         </a>
         <nav class="nav" aria-label="Główna nawigacja">
           <a href="#pomoc">Usługi</a>
           <a href="#dna">DNA</a>
+          <a
+            href="https://www.linkedin.com/in/grotkowskipiotr/"
+            target="_blank"
+            rel="noopener noreferrer"
+            >LinkedIn</a
+          >
           <a href="mailto:kontakt@sylveoncompany.pl" class="nav__cta">Kontakt</a>
         </nav>
       </div>
     </header>
 
     <main id="main">
-      <!-- HERO -->
       <section class="hero">
         <div class="hero__bg" aria-hidden="true">
           <div class="hero__glow"></div>
@@ -176,15 +164,18 @@
         </div>
         <div class="container hero__inner">
           <p class="eyebrow reveal">Piotr Grotkowski Sylveon Company</p>
-         
+
           <h1 class="hero__title reveal">
-            <span style="border: 0; clip: rect(0 0 0 0); height: 1px; margin: -1px; overflow: hidden; padding: 0; position: absolute; width: 1px; white-space: nowrap;">Sylveon Company - Doradztwo iGaming, E-commerce, CRM & Marketing Automation.</span>
+            <span class="sr-only"
+              >Sylveon Company - Doradztwo iGaming, E-commerce, CRM &amp; Marketing Automation.</span
+            >
             Rozmawiamy o efektach,<br /><span class="grad">nie o obietnicach.</span>
           </h1>
-          
+
           <p class="hero__lead reveal">
             <strong>Sylveon Company</strong> to polska firma doradczo-technologiczna, której
-            właścicielem i założycielem jest <strong>Piotr Grotkowski</strong>. Specjalizujemy się w obszarach branży iGaming, E-commerce, CRM, Marketing Automation oraz analityce danych.
+            właścicielem i założycielem jest <strong>Piotr Grotkowski</strong>. Specjalizujemy się w
+            obszarach branży iGaming, E-commerce, CRM, Marketing Automation oraz analityce danych.
           </p>
           <div class="hero__cta reveal">
             <a class="btn btn--primary" href="mailto:kontakt@sylveoncompany.pl">
@@ -195,34 +186,34 @@
         </div>
       </section>
 
-      <!-- PROOF STRIP -->
       <section class="proof" aria-label="Skala działalności">
         <div class="container proof__grid">
           <article class="proof__card reveal">
             <span class="proof__num">01</span>
-            <h3>7+</h3>
-            <p>Lat doświadczenia w iGaming,<br />CRM & Marketing Automation</p>
+            <p class="proof__value">7+</p>
+            <p>Lat doświadczenia w iGaming,<br />CRM &amp; Marketing Automation</p>
           </article>
           <article class="proof__card reveal">
             <span class="proof__num">02</span>
-            <h3>11+</h3>
+            <p class="proof__value">11+</p>
             <p>Lat doświadczenia w IT<br />i zarządzaniu bazami danych</p>
           </article>
           <article class="proof__card reveal">
             <span class="proof__num">03</span>
-            <h3>Tysiące</h3>
+            <p class="proof__value">Tysiące</p>
             <p>Wysyłek marketingowych</p>
           </article>
         </div>
       </section>
 
-      <!-- USŁUGI -->
       <section class="section" id="pomoc">
         <div class="container">
           <header class="section__head reveal">
             <h2>W czym możemy pomóc?</h2>
             <p>
-              Sylveon Company działa technologicznie, operacyjnie i marketingowo. Zajmujemy się CRM, Marketing Automation oraz marketingiem RTM i Social Media w branżach E-commerce i iGaming. Pracujemy z danymi, aby zwiększać retencję, LTV oraz efektywność komunikacji.
+              Sylveon Company działa technologicznie, operacyjnie i marketingowo. Zajmujemy się CRM,
+              Marketing Automation oraz marketingiem RTM i Social Media w branżach E-commerce i
+              iGaming. Pracujemy z danymi, aby zwiększać retencję, LTV oraz efektywność komunikacji.
             </p>
           </header>
 
@@ -231,11 +222,11 @@
               <div class="service__icon" aria-hidden="true">◆</div>
               <h3>Branża iGaming</h3>
               <p>
-                Sektor zakładów bukmacherskich stanowi kluczowy obszar działalności
-                Sylveon Company. Firma na stałe świadczy usługi dla m.in. STS S.A. – lidera
-                polskiego rynku zakładów wzajemnych. Ma też doświadczenie we
-                współpracy z inną legalną firmą iGaming. Projekty obejmują m.in. CRM, sztuczną inteligencję (AI), automatyzację
-                komunikacji, Churn Prevention oraz data-driven Real-Time.
+                Sektor zakładów bukmacherskich stanowi kluczowy obszar działalności Sylveon Company.
+                Firma na stałe świadczy usługi dla m.in. STS S.A. – lidera polskiego rynku zakładów
+                wzajemnych. Ma też doświadczenie we współpracy z inną legalną firmą iGaming. Projekty
+                obejmują m.in. CRM, sztuczną inteligencję (AI), automatyzację komunikacji, Churn
+                Prevention oraz data-driven Real-Time.
               </p>
               <ul class="chips">
                 <li>iGaming</li>
@@ -250,11 +241,11 @@
               <div class="service__icon" aria-hidden="true">◇</div>
               <h3>IT &amp; E-commerce</h3>
               <p>
-                Projektujemy strony i sklepy internetowe oraz obsługujemy bazy danych produktów i klientów dla e-commerce. Doświadczenie poparte jest m.in realizacją własnego
-                sklepu online, który został zbudowany i rozwinięty przez założyciela.
-                Od warstwy www, przez zarządzanie bazami, po automatyzację
-                marketingu. Sklep następnie został sprzedany inwestorowi w momencie
-                wysokiej rentowności.
+                Projektujemy strony i sklepy internetowe oraz obsługujemy bazy danych produktów i
+                klientów dla e-commerce. Doświadczenie poparte jest m.in realizacją własnego sklepu
+                online, który został zbudowany i rozwinięty przez założyciela. Od warstwy www, przez
+                zarządzanie bazami, po automatyzację marketingu. Sklep następnie został sprzedany
+                inwestorowi w momencie wysokiej rentowności.
               </p>
               <ul class="chips">
                 <li>E-commerce</li>
@@ -270,31 +261,36 @@
               <div class="service__icon" aria-hidden="true">◈</div>
               <h3>CRM &amp; Marketing</h3>
               <p>
-                Optymalizujemy i obsługujemy systemy Customer Relationship
-                Management oraz procesy marketing automation. Obejmuje to zaawansowaną segmentację
-                klientów, personalizację i automatyzację komunikacji wielokanałowej, zarządzanie
-                lifecycle marketingiem, projektowanie triggerów behawioralnych oraz
-                strategie retencyjne, reaktywacyjne i akwizycyjne oparte na danych.
+                Optymalizujemy i obsługujemy systemy Customer Relationship Management oraz procesy
+                marketing automation. Obejmuje to zaawansowaną segmentację klientów, personalizację i
+                automatyzację komunikacji wielokanałowej, zarządzanie lifecycle marketingiem,
+                projektowanie triggerów behawioralnych oraz strategie retencyjne, reaktywacyjne i
+                akwizycyjne oparte na danych.
               </p>
               <ul class="chips">
                 <li>Customer Lifecycle</li>
                 <li>Segmentation</li>
                 <li>Personalization</li>
                 <li>Data-Driven</li>
-		<li>Behavioral Triggers</li>
+                <li>Behavioral Triggers</li>
               </ul>
             </article>
           </div>
         </div>
       </section>
 
-      <!-- DNA -->
       <section class="section section--alt" id="dna">
         <div class="container dna">
           <header class="section__head reveal">
-            <h2><span class="grad">Połączenie Analityki, Sportu i Nowoczesnych Technologii</span></h2>
+            <h2>
+              <span class="grad">Połączenie Analityki, Sportu i Nowoczesnych Technologii</span>
+            </h2>
             <p>
-           U podstaw Sylveon Company leży praktyczne podejście do biznesu oparte na danych. Wykorzystujemy m.in. analitykę i modele predykcyjne w projektach związanych z CRM, iGaming, Marketing Automation oraz przy tworzeniu, rozwoju i zarządzaniu sklepami internetowymi. Kompetencje te znajdują zastosowanie również w obszarze analityki sportowej, prognozowania wydarzeń oraz tworzenia eksperckich analiz.
+              U podstaw Sylveon Company leży praktyczne podejście do biznesu oparte na danych.
+              Wykorzystujemy m.in. analitykę i modele predykcyjne w projektach związanych z CRM,
+              iGaming, Marketing Automation oraz przy tworzeniu, rozwoju i zarządzaniu sklepami
+              internetowymi. Kompetencje te znajdują zastosowanie również w obszarze analityki
+              sportowej, prognozowania wydarzeń oraz tworzenia eksperckich analiz.
             </p>
           </header>
 
@@ -302,44 +298,45 @@
             <article class="dna__card reveal">
               <h3>Analityka &amp; Wyścigi Konne</h3>
               <p>
-                Analityczne podejście do kalkulacji ryzyka z sukcesem przenosimy na m.in. 
-                rynek wyścigów konnych. Założyciel firmy uczestniczył w oficjalnej lidze typerów TrafNews, a predykcje były udostępniane na dedykowanych portalach
-                branżowych. Doświadczenie to uzupełnia status byłego współwłaściciela koni
-                wyścigowych na warszawskim Torze Służewiec.
+                Analityczne podejście do kalkulacji ryzyka z sukcesem przenosimy na m.in. rynek
+                wyścigów konnych. Założyciel firmy uczestniczył w oficjalnej lidze typerów TrafNews,
+                a predykcje były udostępniane na dedykowanych portalach branżowych. Doświadczenie to
+                uzupełnia status byłego współwłaściciela koni wyścigowych na warszawskim Torze
+                Służewiec.
               </p>
             </article>
 
             <article class="dna__card reveal">
               <h3>Trendy Popkulturowowe</h3>
               <p>
-                Horyzonty operacyjne firmy obejmują precyzyjne śledzenie globalnych
-                zjawisk popkulturowych i społecznych, takich jak Eurowizja czy
-                prestiżowe gale rozdania nagród. Analizujemy rynki
-                zakładów typu non-sports oraz badamy i tworzymy
-                real-time marketing wpływając na zachowania konsumentów. Nie samym sportem człowiek żyje!
+                Horyzonty operacyjne firmy obejmują precyzyjne śledzenie globalnych zjawisk
+                popkulturowych i społecznych, takich jak Eurowizja czy prestiżowe gale rozdania
+                nagród. Analizujemy rynki zakładów typu non-sports oraz badamy i tworzymy real-time
+                marketing wpływając na zachowania konsumentów. Nie samym sportem człowiek żyje!
               </p>
             </article>
 
             <article class="dna__card reveal">
               <h3>Dart &amp; Event Management</h3>
               <p>
-                Działalność Sylveon Company obejmuje również inicjatywy związane ze sportem darta, w tym organizację turniejów oraz projekty eventowe. Uzupełnieniem aktywności jest sprzedaż sprzętu i akcesoriów wykorzystywanych w tej dyscyplinie sportu.
+                Działalność Sylveon Company obejmuje również inicjatywy związane ze sportem darta, w
+                tym organizację turniejów oraz projekty eventowe. Uzupełnieniem aktywności jest
+                sprzedaż sprzętu i akcesoriów wykorzystywanych w tej dyscyplinie sportu.
               </p>
             </article>
           </div>
         </div>
       </section>
 
-      <!-- CTA -->
       <section class="section">
         <div class="container">
           <div class="cta reveal">
             <h2>Wycisnąć maksimum z Twoich danych</h2>
             <p>
-              Szukasz strategicznego doradztwa marketingowego,
-              chcesz podziałać w CRM, zacząć z e-commerce, czy potrzebujesz
-              partnera, który doskonale rozumie specyfikę iGaming lub poprowadzi Twoje Social Media?
-              Sylveon Company to adres, pod którym rozmawia się o efektach.
+              Szukasz strategicznego doradztwa marketingowego, chcesz podziałać w CRM, zacząć z
+              e-commerce, czy potrzebujesz partnera, który doskonale rozumie specyfikę iGaming lub
+              poprowadzi Twoje Social Media? Sylveon Company to adres, pod którym rozmawia się o
+              efektach.
             </p>
             <address>
               <a class="btn btn--primary" href="mailto:kontakt@sylveoncompany.pl">
@@ -355,7 +352,16 @@
     <footer class="footer">
       <div class="container footer__inner">
         <p>© <span id="year"></span> Sylveon Company · Piotr Grotkowski</p>
-        <a href="mailto:kontakt@sylveoncompany.pl">kontakt@sylveoncompany.pl</a>
+        <div class="footer__links">
+          <a href="/polityka-prywatnosci">Polityka prywatności</a>
+          <a href="mailto:kontakt@sylveoncompany.pl">kontakt@sylveoncompany.pl</a>
+          <a
+            href="https://www.linkedin.com/in/grotkowskipiotr/"
+            target="_blank"
+            rel="noopener noreferrer"
+            >LinkedIn</a
+          >
+        </div>
       </div>
     </footer>
 
@@ -364,10 +370,8 @@
     </a>
 
     <script>
-      // Rok w stopce
       document.getElementById("year").textContent = new Date().getFullYear();
 
-      // Reveal on scroll
       const prefersReduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
       const revealEls = document.querySelectorAll(".reveal");
       if (prefersReduced || !("IntersectionObserver" in window)) {
@@ -387,7 +391,6 @@
         revealEls.forEach((el) => io.observe(el));
       }
 
-      // Sticky mobile CTA
       const hero = document.querySelector(".hero");
       const cta = document.getElementById("stickyCta");
       if (hero && cta && "IntersectionObserver" in window) {
