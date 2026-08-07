@@ -518,39 +518,38 @@ a:focus-visible {
 }
 
 /* ============= Product link (Dart Profile) ============= */
-/* Kolory jak SYLVEON na dart.sylveoncompany.pl (oklch z globals.css Darta) */
+/* Paleta jak SYLVEON na dart.sylveoncompany.pl */
+
+.section--dart {
+  padding-block: clamp(28px, 5vw, 48px);
+}
 
 .product-link {
-  --sylveon-from: oklch(0.82 0.14 355);
-  --sylveon-to: oklch(0.72 0.16 310);
-  --dart-accent-from: oklch(0.8 0.14 250);
-  --dart-accent-to: oklch(0.66 0.22 285);
+  --sylveon-from: #ff7eb6;
+  --sylveon-to: #c084fc;
+  --dart-accent-from: #7dd3fc;
+  --dart-accent-to: #a78bfa;
 
   max-width: 720px;
   margin-inline: auto;
   text-align: center;
-  padding: clamp(28px, 5vw, 48px) clamp(20px, 4vw, 40px);
+  padding: clamp(28px, 5vw, 44px) clamp(20px, 4vw, 40px);
   border-radius: var(--radius-lg);
-  border: 1px solid color-mix(in oklch, var(--sylveon-from) 35%, transparent);
+  border: 1px solid rgba(255, 126, 182, 0.45);
   background:
-    radial-gradient(
-      90% 80% at 50% 0%,
-      color-mix(in oklch, var(--sylveon-from) 22%, transparent),
-      transparent 62%
-    ),
-    radial-gradient(
-      70% 60% at 100% 100%,
-      color-mix(in oklch, var(--sylveon-to) 16%, transparent),
-      transparent 55%
-    ),
+    radial-gradient(90% 90% at 50% -10%, rgba(255, 126, 182, 0.32), transparent 55%),
+    radial-gradient(80% 70% at 100% 110%, rgba(192, 132, 252, 0.28), transparent 50%),
+    linear-gradient(180deg, rgba(255, 126, 182, 0.08), transparent 40%),
     var(--surface);
-  box-shadow: 0 24px 60px -28px color-mix(in oklch, var(--sylveon-to) 45%, transparent);
+  box-shadow:
+    0 0 0 1px rgba(255, 126, 182, 0.08) inset,
+    0 28px 70px -24px rgba(192, 132, 252, 0.55);
 }
 .product-link .eyebrow {
   margin-bottom: 18px;
-  color: var(--sylveon-from);
-  border-color: color-mix(in oklch, var(--sylveon-from) 40%, transparent);
-  background: color-mix(in oklch, var(--sylveon-from) 10%, transparent);
+  color: #ff9ecd;
+  border-color: rgba(255, 126, 182, 0.45);
+  background: rgba(255, 126, 182, 0.12);
 }
 .product-link h2 {
   margin-bottom: 14px;
@@ -560,12 +559,14 @@ a:focus-visible {
   background: linear-gradient(90deg, var(--sylveon-from), var(--sylveon-to));
   -webkit-background-clip: text;
   background-clip: text;
+  -webkit-text-fill-color: transparent;
   color: transparent;
 }
 .product-link__accent {
   background: linear-gradient(90deg, var(--dart-accent-from), var(--dart-accent-to));
   -webkit-background-clip: text;
   background-clip: text;
+  -webkit-text-fill-color: transparent;
   color: transparent;
 }
 .product-link p {
@@ -575,13 +576,13 @@ a:focus-visible {
 }
 
 .btn--dart {
-  background: linear-gradient(135deg, var(--sylveon-from), var(--sylveon-to));
+  background: linear-gradient(135deg, #ff7eb6, #c084fc);
   color: #fff;
-  box-shadow: 0 18px 40px -16px color-mix(in oklch, var(--sylveon-to) 55%, transparent);
+  box-shadow: 0 18px 40px -14px rgba(255, 126, 182, 0.55);
 }
 .btn--dart:hover {
   transform: translateY(-1px);
-  box-shadow: 0 22px 50px -14px color-mix(in oklch, var(--sylveon-from) 55%, transparent);
+  box-shadow: 0 24px 52px -12px rgba(192, 132, 252, 0.65);
 }
 
 /* ============= CTA card ============= */
