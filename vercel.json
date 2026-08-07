@@ -56,16 +56,12 @@
       "source": "/privacy",
       "destination": "/polityka-prywatnosci",
       "permanent": true
-    }
-  ],
-  "rewrites": [
-    {
-      "source": "/gtag/js",
-      "destination": "https://www.googletagmanager.com/gtag/js"
     },
     {
-      "source": "/g/collect",
-      "destination": "https://region1.google-analytics.com/g/collect"
+      "source": "/:path*",
+      "has": [{ "type": "host", "value": "www.sylveoncompany.pl" }],
+      "destination": "https://sylveoncompany.pl/:path*",
+      "permanent": true
     }
   ]
 }
